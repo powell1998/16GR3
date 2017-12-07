@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+    <struts>
+	<!-- 启用自动动态方法的调用 -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <!-- 全局配置 -->
+    <package name="default" namespace="/" extends="struts-default">
+        <global-results>
+            <result name="error">/WEB-INF/jsp/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+    </package>
+	<!-- 模块化管理包 -->
+    <package name="usermanager" extends="default">
+    	<action name="getAllUser" class="com.powell.t5.action.UserAction" method="getAllUser">
+    		<result name="success">/jsp/listUser.jsp</result>
+    		<result name="input">index.jsp</result>
+    	</action>
+    	
+    	<action name="addUser" class="com.powell.t5.action.UserAction" method="add">
+    		<result name="addSuccess">index.jsp</result>
+    	</action>
+    	
+    	<action name="toUpdateUser" class="com.powell.t5.action.UserAction" method="toupdate">
+    		<result name="toUpdate">/jsp/updateUser.jsp</result>
+    	</action>
+    	
+    	<action name="updateUser" class="com.powell.t5.action.UserAction" method="update">
+    		<result name="updateSuccess" type="redirectAction">index.jsp</result>
+    	</action>
+    	
+    	<action name="deleteUser" class="com.powell.t5.action.UserAction" method="delete">
+    		<result name="deleteSuccess" type="redirectAction">index.jsp</result>
+    	</action>
+    </package>
+
+</struts>
