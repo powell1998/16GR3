@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Sun Dec 17 18:42:56 CST 2017
+genBasicCompId=false
+sessionFactoryName=com.qhit.lh.gr3.powell.t4.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=native
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/HBT04/src/hibernate.cfg.xml
+createConfigFile=true
